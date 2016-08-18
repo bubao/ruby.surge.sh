@@ -1,5 +1,6 @@
 module.exports = {
   *index(next) {
-    this.body = {}
+    yield this.render('index', {
+    })
   }
 }

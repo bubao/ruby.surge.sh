@@ -13,6 +13,8 @@ server.use(views('./views', {
   }
 }))
 
+server.use(actions.index)
+
 server.listen(4567, () => {
   console.log('* Listening on http://localhost:4567')
   console.log('* Use Ctrl-C to stop')
