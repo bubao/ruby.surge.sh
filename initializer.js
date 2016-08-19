@@ -4,14 +4,17 @@ import {Provider} from 'react-redux'
 import {createStore, combineReducers} from 'redux'
 import {Router, browserHistory} from 'react-router'
 import {routerReducer as routing, syncHistoryWithStore} from 'react-router-redux'
-
 import reducers from './reducers'
+import styles from './styles'
+import routes from './routes'
 
 const store = createStore(combineReducers({
   reducers: reducers,
   routing: routing
 }))
 
-render(<Provider store={store}>
-  <Router history={syncHistoryWithStore(browserHistory, store)} />
-</Provider>, document.getElementById('application'))
+render(((history) => {
+  return <Provider store={store}>
+    <Router routes={routes} history={history} />
+  </Provider>
+})(syncHistoryWithStore(browserHistory, store)), document.getElementById('layout-views'))
