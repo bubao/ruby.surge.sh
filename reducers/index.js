@@ -1,3 +1,7 @@
-module.exports = (state = 0, action) => {
-  return state
+import topics from './topics'
+import users from './users'
+
+module.exports = {
+  users: users,
+  topics: topics
 }

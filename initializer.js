@@ -9,8 +9,9 @@ import styles from './styles'
 import routes from './routes'
 
 const store = createStore(combineReducers({
-  reducers: reducers,
-  routing: routing
+  routing: routing,
+  users: reducers.users,
+  topics: reducers.topics
 }))
 
 render(((history) => {

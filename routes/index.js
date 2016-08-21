@@ -1,11 +1,12 @@
 import App from '../views/App'
 import NotFound from '../views/404'
+import {HomeLayout} from '../views/layouts'
 
 module.exports = {
   path: '/',
   component: App,
   indexRoute: {
-    component: NotFound
+    component: HomeLayout
   },
   childRoutes: [
     {

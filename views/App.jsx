@@ -3,14 +3,23 @@ import {connect} from 'react-redux'
 
 module.exports = connect((state) => {
   return {
-    users: []
+    users: state.users,
+    topics: state.topics
   }
 })(React.createClass({
   componentDidMount() {
-    console.log(this.props)
-    console.log(this.state)
   },
   render() {
-    return <div>App</div>
+    return <div>
+      {
+        React.Children.map(this.props.children, (e) => {
+          return React.cloneElement(e, {
+            dispatch: this.props.dispatch,
+            topics: this.props.topics,
+            users: this.props.users
+          })
+        })
+      }
+    </div>
   }
 }))
