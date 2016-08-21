@@ -1,8 +1,8 @@
 const koa = require('koa')
 const mount = require('koa-mount')
 const views = require('koa-views')
-const assets = require('./config/assets')
-const actions = require('./config/actions')
+const assets = require('./configs/assets')
+const actions = require('./configs/actions')
 
 const server = koa()
 
