@@ -15,7 +15,11 @@ module.exports = React.createClass({
   },
   render() {
     return <div>
-      <TopicList dataSource={this.props.topics} />
+      {
+        this.props.topics.length > 1 ? ((dataSource) => {
+          return <TopicList dataSource={dataSource} />
+        })(this.props.topics) : null
+      }
     </div>
   }
 })
