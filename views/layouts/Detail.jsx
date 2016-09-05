@@ -15,7 +15,7 @@ module.exports = React.createClass({
   },
   render() {
     return <div>
-      <TopicDetail />
+      <TopicDetail dataSource={this.props.topics} />
     </div>
   }
 })
