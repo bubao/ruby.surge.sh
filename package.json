@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "jest -c jestfile.json"
   },
   "author": "ah-yeah <ah-yeah@git.io>",
   "private": true,
