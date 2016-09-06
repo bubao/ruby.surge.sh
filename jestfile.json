@@ -2,8 +2,8 @@
   "moduleFileExtensions": ["js", "jsx"],
   "moduleDirectories": ["node_modules"],
   "moduleNameMapper": {
-    "^.+\\.(css|styl)$": "<rootDir>/tests/mock.js",
-    "^.+\\.(gif|ttf|eot|svg)$": "<rootDir>/tests/mock.js"
+    "^.+\\.(css|styl)$": "<rootDir>/mockfile.js",
+    "^.+\\.(gif|ttf|eot|svg)$": "<rootDir>/mockfile.js"
   },
   "testRegex": "(/tests/.*|\\.(test|spec))\\.js$"
 }
