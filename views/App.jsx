@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import Navbar from './components/Navbar'
 
 module.exports = connect((state) => {
   return {
@@ -11,6 +12,7 @@ module.exports = connect((state) => {
   },
   render() {
     return <div>
+      <Navbar />
       {
         React.Children.map(this.props.children, (e) => {
           return React.cloneElement(e, {
