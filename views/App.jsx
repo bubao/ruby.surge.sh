@@ -15,6 +15,7 @@ module.exports = connect((state) => {
         React.Children.map(this.props.children, (e) => {
           return React.cloneElement(e, {
             dispatch: this.props.dispatch,
+            replies: this.props.replies,
             topics: this.props.topics,
             users: this.props.users
           })

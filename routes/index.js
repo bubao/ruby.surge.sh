@@ -15,7 +15,7 @@ module.exports = {
       component: DetailLayout
     },
     {
-      path: '404',
+      path: '*',
       component: NotFound
     }
   ]
