@@ -6,6 +6,6 @@ module.exports = React.createClass({
     document.title = i18n.zh_CN.pages_404
   },
   render() {
-    return <div>{i18n.zh_CN.pages_404}</div>
+    return <div className="container">{i18n.zh_CN.pages_404}</div>
   }
 })

@@ -14,12 +14,20 @@ module.exports = React.createClass({
     })
   },
   render() {
-    return <div>
-      {
-        this.props.topics.length == 1 ? ((dataSource) => {
-          return <TopicDetail dataSource={dataSource} />
-        })(this.props.topics[0]) : null
-      }
+    return <div className="container">
+      <div className="detail-layout">
+        <div className="layout-header">
+        </div>
+        <div className="layout-container">
+          {
+            this.props.topics.length == 1 ? ((dataSource) => {
+              return <TopicDetail dataSource={dataSource} />
+            })(this.props.topics[0]) : null
+          }
+        </div>
+        <div className="layout-footer">
+        </div>
+      </div>
     </div>
   }
 })

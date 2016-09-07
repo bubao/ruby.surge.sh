@@ -1,2 +1,5 @@
 require('bootstrap/dist/css/bootstrap')
 require('file?name=[name].[ext]!bootstrap/dist/css/bootstrap.css.map')
+require('../views/components/Navbar/styles')
+require('./defaults')
+require('./layouts')
