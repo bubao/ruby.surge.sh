@@ -8,7 +8,9 @@ module.exports = React.createClass({
   },
   render() {
     return <div className="modal-layout">
-      <div className={classnames('modal-backdrop fade', { in: this.props.fadeIn })} onClick={this.props.handleFadeIn} />
+      <div className={classnames('modal-backdrop fade', { in: this.props.fadeIn })} style={{
+        display: this.props.fadeIn ? 'block' : 'none'
+      }} />
       <div className={classnames('modal fade', { in: this.props.fadeIn })} style={{
         display: this.props.fadeIn ? 'block' : 'none'
       }}>

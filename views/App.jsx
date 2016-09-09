@@ -11,7 +11,7 @@ module.exports = connect((state) => {
 })(React.createClass({
   getInitialState() {
     return {
-      fadeIn: true
+      fadeIn: false
     }
   },
   componentDidMount() {

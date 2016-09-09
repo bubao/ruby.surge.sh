@@ -6,7 +6,10 @@ module.exports = React.createClass({
     return <nav className="navbar navbar-light bg-faded">
       <ul className="nav navbar-nav pull-xs-right">
         <li className="nav-item">
-          <a href="/login" className="nav-link">{i18n.zh_CN.login}</a>
+          <a href="/login" className="nav-link" onClick={(event) => {
+            event.preventDefault()
+            this.props.handleFadeIn()
+          }}>{i18n.zh_CN.login}</a>
         </li>
       </ul>
     </nav>
