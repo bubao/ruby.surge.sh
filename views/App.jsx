@@ -9,12 +9,22 @@ module.exports = connect((state) => {
     topics: state.topics
   }
 })(React.createClass({
+  getInitialState() {
+    return {
+      fadeIn: true
+    }
+  },
   componentDidMount() {
   },
+  handleFadeIn() {
+    this.setState({
+      fadeIn: ! this.state.fadeIn
+    })
+  },
   render() {
-    return <div>
-      <Modal fadeIn={true} />
-      <Navbar />
+    return <div className="layout-views">
+      <Modal fadeIn={this.state.fadeIn} handleFadeIn={this.handleFadeIn} />
+      <Navbar handleFadeIn={this.handleFadeIn} />
       {
         React.Children.map(this.props.children, (e) => {
           return React.cloneElement(e, {

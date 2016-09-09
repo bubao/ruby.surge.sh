@@ -8,14 +8,14 @@ module.exports = React.createClass({
   },
   render() {
     return <div className="modal-layout">
-      <div className={classnames('modal-backdrop fade', { in: this.props.fadeIn })}></div>
+      <div className={classnames('modal-backdrop fade', { in: this.props.fadeIn })} onClick={this.props.handleFadeIn} />
       <div className={classnames('modal fade', { in: this.props.fadeIn })} style={{
         display: this.props.fadeIn ? 'block' : 'none'
       }}>
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <button type="button" className="close">
+              <button className="close" type="button" onClick={this.props.handleFadeIn}>
                 <span>&times;</span>
               </button>
               <div className="modal-title"></div>
