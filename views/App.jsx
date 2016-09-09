@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import Modal from './components/Modal'
 import Navbar from './components/Navbar'
 
 module.exports = connect((state) => {
@@ -12,6 +13,7 @@ module.exports = connect((state) => {
   },
   render() {
     return <div>
+      <Modal fadeIn={true} />
       <Navbar />
       {
         React.Children.map(this.props.children, (e) => {
