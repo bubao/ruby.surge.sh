@@ -24,10 +24,8 @@ module.exports = React.createClass({
   handleSubmit(event) {
     event.preventDefault()
     superagent.post(`${OAUTH_URL}/token?grant_type=password`).send(this.state.login).then((response) => {
-
-    // access_token
-    // expires_in
-
+      this.props.login(response.body)
+      this.props.closeModal()
     }).catch((error) => {
     })
   },
