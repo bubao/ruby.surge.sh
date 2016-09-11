@@ -16,9 +16,9 @@ module.exports = React.createClass({
               <button className="close" type="button" onClick={this.props.closeModal}>
                 <span>&times;</span>
               </button>
-              <div className="modal-title"></div>
+              <div className="modal-title">{this.props.title}</div>
             </div>
-            <div className="modal-body"></div>
+            <div className="modal-body">{this.props.children || null}</div>
           </div>
         </div>
       </div>
