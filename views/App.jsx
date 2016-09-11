@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import Modal from './components/Modal'
 import Navbar from './components/Navbar'
+import LoginModal from './components/LoginModal'
 
 module.exports = connect((state) => {
   return {
@@ -11,30 +11,40 @@ module.exports = connect((state) => {
 })(React.createClass({
   getInitialState() {
     return {
-      fadeIn: false
+      login: {
+        presence: false
+      }
     }
   },
   componentDidMount() {
   },
-  handleFadeIn() {
-    this.setState({
-      fadeIn: ! this.state.fadeIn
+  renderChildren() {
+    return React.Children.map(this.props.children, (e) => {
+      return React.cloneElement(e, {
+        dispatch: this.props.dispatch,
+        replies: this.props.replies,
+        topics: this.props.topics,
+        users: this.props.users
+      })
     })
   },
   render() {
     return <div className="layout-views">
-      <Modal fadeIn={this.state.fadeIn} handleFadeIn={this.handleFadeIn} />
-      <Navbar handleFadeIn={this.handleFadeIn} />
-      {
-        React.Children.map(this.props.children, (e) => {
-          return React.cloneElement(e, {
-            dispatch: this.props.dispatch,
-            replies: this.props.replies,
-            topics: this.props.topics,
-            users: this.props.users
-          })
+      <Navbar openModal={() => {
+        this.setState({
+          login: {
+            presence: true
+          }
         })
-      }
+      }} />
+      {this.renderChildren()}
+      <LoginModal open={this.state.login.presence} closeModal={() => {
+        this.setState({
+          login: {
+            presence: false
+          }
+        })
+      }} />
     </div>
   }
 }))

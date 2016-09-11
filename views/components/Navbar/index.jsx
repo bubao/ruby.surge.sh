@@ -8,7 +8,7 @@ module.exports = React.createClass({
         <li className="nav-item">
           <a href="/login" className="nav-link" onClick={(event) => {
             event.preventDefault()
-            this.props.handleFadeIn()
+            this.props.openModal()
           }}>{i18n.zh_CN.login}</a>
         </li>
       </ul>
