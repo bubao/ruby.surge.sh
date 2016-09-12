@@ -13,13 +13,15 @@ module.exports = React.createClass({
             this.props.currentUser.login ? ((currentUser) => {
               return [
                 <li key={currentUser.id} className="nav-item">
-                  <Link to={`/${currentUser.login}`} className="nav-link">{currentUser.login}</Link>
+                  <Link to={`/${currentUser.login}`} className="nav-link">{currentUser.login.replace(/\b\w/, (letter) => {
+                    return letter.toUpperCase()
+                  })}</Link>
                 </li>,
                 <li key={+new Date()} className="nav-item">
                   <a href="/logout" className="nav-link" onClick={(event) => {
                     event.preventDefault()
                     localStorage.clear()
-                    window.reload()
+                    location.reload()
                   }}>{i18n.zh_CN.logout}</a>
                 </li>
               ]
