@@ -1,5 +1,6 @@
 import React from 'react'
 import superagent from 'superagent'
+import update from 'react-addons-update'
 import Modal from './Modal'
 import {i18n} from '../../settings'
 import {OAUTH_URL} from '../../constants'
@@ -14,11 +15,12 @@ module.exports = React.createClass({
     }
   },
   handleChange(event) {
-    const login = this.state.login
-    login[event.target.name] = event.target.value
-
     this.setState({
-      login: login
+      login: update(this.state.login, {
+        [event.target.name]: {
+          $set: event.target.value
+        }
+      })
     })
   },
   handleSubmit(event) {

@@ -18,7 +18,7 @@ module.exports = React.createClass({
           return url ? url.replace(/\!.+$/, '!md') : url
         })(item.user.avatar_url)} className="item-avatar" />
         <div className="item-meta">
-          <Link to={`/topics/${item.node_id}`} className="item-node-name">{item.node_name}</Link>
+          <Link to={`/nodes/${item.node_id}`} className="item-node-name">{item.node_name}</Link>
           <span className="item-middot">{String.fromCharCode(183)}</span>
           <Link to={`/${item.last_reply_user_login}`} className="item-node-name">{item.last_reply_user_login}</Link>
           <span className="item-middot">{String.fromCharCode(183)}</span>
